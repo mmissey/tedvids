@@ -41,12 +41,7 @@ video {
     color: #000000;
 }
 .header {
-    background-color: #8439a3;
-    background-image: -webkit-linear-gradient(top, #8d42ae, #772c94);
-    background-image: -o-linear-gradient(top, #8d42ae, #772c94);
-    background-image: linear-gradient(to bottom, #8d42ae, #772c94);
-    background-repeat: repeat-x;
-    border-top: #aa53c2 solid 0.0625em;
+    background: #465E4F;
     color: #FFFFFF;
     font-size: 35px;
     font-weight: 600;
