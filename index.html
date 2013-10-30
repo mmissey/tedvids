@@ -20,26 +20,32 @@
             <i class="fa fa-arrow-left" ng-click="prevVideo()"></i>
             <div class="vidSlider">
                 <div id="vid1" class="vidNav">
-                    <div class="title">{{videos[prevVideoIndex]['title']}}</div>
+                    <div class="title"><a ng-href="{{videos[prevVideoIndex]['media:content']['url']}}">{{videos[prevVideoIndex]['title']}}</a>
+                    </div>
                     <div class="thumbHolder">
                         <img class="vidThumb" src="{{videos[prevVideoIndex]['media:thumbnail']['url']}}">
-                        <div class="vidOverlay"><i class="fa fa-play"></i></div>
+                        <div class="vidOverlay"><i class="fa fa-play"></i>
+                        </div>
                     </div>
                     <div class="desc">{{videos[prevVideoIndex]['description']}}</div>
                 </div>
                 <div id="vid2" class="vidNav">
-                    <div class="title">{{videos[currentVideoIndex]['title']}}</div>
+                    <div class="title"><a ng-href="{{videos[currentVideoIndex]['media:content']['url']}}">{{videos[currentVideoIndex]['title']}}</a>
+                    </div>
                     <div ng-click="playVideo()" class="thumbHolder">
                         <img class="vidThumb" src="{{videos[currentVideoIndex]['media:thumbnail']['url']}}">
-                        <div class="vidOverlay"><i class="fa fa-play"></i></div>
+                        <div class="vidOverlay"><i class="fa fa-play"></i>
+                        </div>
                     </div>
                     <div class="desc">{{videos[currentVideoIndex]['description']}}</div>
                 </div>
                 <div id="vid3" class="vidNav">
-                    <div class="title">{{videos[nextVideoIndex]['title']}}</div>
+                    <div class="title"><a ng-href="{{videos[nextVideoIndex]['media:content']['url']}}">{{videos[nextVideoIndex]['title']}}</a>
+                    </div>
                     <div class="thumbHolder">
                         <img class="vidThumb" src="{{videos[nextVideoIndex]['media:thumbnail']['url']}}">
-                        <div class="vidOverlay"><i class="fa fa-play"></i></div>
+                        <div class="vidOverlay"><i class="fa fa-play"></i>
+                        </div>
                     </div>
                     <div class="desc">{{videos[nextVideoIndex]['description']}}</div>
                 </div>

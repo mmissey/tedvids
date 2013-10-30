@@ -51,16 +51,16 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout',
             if (sliding === true) {
                 return false;
             }
-            $('.vidNav').addClass('slideLeft');
+            $('.vidNav').addClass('slideLeft');         //set up the CSS animation
             sliding = true;
             $timeout(function() {
                 var nextIndex = $scope.currentVideoIndex + 1;
-                if (nextIndex < $scope.videos.length) {
+                if (nextIndex < $scope.videos.length) {       //change the videos so they align with the new positions
                     $scope.loadVideo(nextIndex);
                 } else {
                     $scope.loadVideo(0);
                 }
-                $('.vidNav').removeClass('slideLeft');
+                $('.vidNav').removeClass('slideLeft'); //remove the animation
                 sliding = false;
             }, 1000);
         };
@@ -69,16 +69,16 @@ app.controller('MainCtrl', ['$scope', '$http', '$timeout',
             if (sliding === true) {
                 return false;
             }
-            $('.vidNav').addClass('slideRight');
+            $('.vidNav').addClass('slideRight');         //set up the CSS animation
             sliding = true;
             $timeout(function() {
                 var prevIndex = $scope.currentVideoIndex - 1;
-                if (prevIndex >= 0) {
+                if (prevIndex >= 0) {                 //change the videos so they align with the new positions
                     $scope.loadVideo(prevIndex);
                 } else {
                     $scope.loadVideo($scope.videos.length - 1);
                 }
-                $('.vidNav').removeClass('slideRight');
+                $('.vidNav').removeClass('slideRight');  //remove the animation
                 sliding = false;
             }, 1000);
         };
