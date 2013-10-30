@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="" ng-app="tedVids">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TED Vids</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+</head>
+
+<body ng-app="tedVids" ng-controller="MainCtrl" ng-cloak>
+    <div class="wrapper">
+        <div class="header">
+            TED Videos
+        </div>
+        <div class="browse">
+            <i class="fa fa-arrow-left" ng-click="prevVideo()"></i>
+            <div class="vidSlider">
+                <div id="vid1" class="vidNav">
+                    <div class="title">{{videos[prevVideoIndex]['title']}}</div>
+                    <div class="thumbHolder">
+                        <img class="vidThumb" src="{{videos[prevVideoIndex]['media:thumbnail']['url']}}">
+                        <div class="vidOverlay"><i class="fa fa-play"></i></div>
+                    </div>
+                    <div class="desc">{{videos[prevVideoIndex]['description']}}</div>
+                </div>
+                <div id="vid2" class="vidNav">
+                    <div class="title">{{videos[currentVideoIndex]['title']}}</div>
+                    <div ng-click="playVideo()" class="thumbHolder">
+                        <img class="vidThumb" src="{{videos[currentVideoIndex]['media:thumbnail']['url']}}">
+                        <div class="vidOverlay"><i class="fa fa-play"></i></div>
+                    </div>
+                    <div class="desc">{{videos[currentVideoIndex]['description']}}</div>
+                </div>
+                <div id="vid3" class="vidNav">
+                    <div class="title">{{videos[nextVideoIndex]['title']}}</div>
+                    <div class="thumbHolder">
+                        <img class="vidThumb" src="{{videos[nextVideoIndex]['media:thumbnail']['url']}}">
+                        <div class="vidOverlay"><i class="fa fa-play"></i></div>
+                    </div>
+                    <div class="desc">{{videos[nextVideoIndex]['description']}}</div>
+                </div>
+            </div>
+            <i class="fa fa-arrow-right" ng-click="nextVideo()"></i>
+        </div>
+        <div class="vidInfo"></div>
+    </div>
+    <div class="vidHolder" ng-show="showVid">
+        <div ng-click="closeVideo()" class="close">Close Video</div>
+        <video id="videoPlayer" width="480" height="360" controls>
+            <source src="{{vidSrc}}" type="video/mp4">
+                Your browser does not support the video tag.
+        </video>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
