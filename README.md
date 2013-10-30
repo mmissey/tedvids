@@ -1,4 +1,4 @@
 tedvids
 =======
 
-A small one page app for browsing and playing TED videos
+A small single page AngularJS web app for browsing and playing TED videos
